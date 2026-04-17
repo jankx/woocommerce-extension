@@ -1,0 +1,22 @@
+# Build files
+node_modules/
+*.log
+*.map
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# IDE files
+.idea/
+.vscode/
+*.swp
+*.swo
+
+# Testing
+coverage/
+.phpunit.cache/
+
+# Temporary files
+*.tmp
+*.temp

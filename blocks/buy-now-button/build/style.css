@@ -1,0 +1,103 @@
+/**
+ * Buy Now Button Block - Frontend Styles
+ */
+
+.jankx-wc-buy-now-wrapper {
+    display: inline-block;
+    margin: 0.5rem 0;
+}
+
+.jankx-wc-buy-now-wrapper--full-width {
+    display: block;
+    width: 100%;
+}
+
+.jankx-wc-buy-now-wrapper--full-width .jankx-wc-buy-now-button {
+    width: 100%;
+}
+
+.jankx-wc-buy-now-button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 12px 24px;
+    font-size: 14px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    border: 2px solid transparent;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    text-decoration: none;
+}
+
+.jankx-wc-buy-now-button.button--primary {
+    background-color: #ff5722;
+    color: #ffffff;
+    border-color: #ff5722;
+}
+
+.jankx-wc-buy-now-button.button--primary:hover {
+    background-color: #e64a19;
+    border-color: #e64a19;
+}
+
+.jankx-wc-buy-now-button.button--secondary {
+    background-color: #333333;
+    color: #ffffff;
+    border-color: #333333;
+}
+
+.jankx-wc-buy-now-button.button--secondary:hover {
+    background-color: #555555;
+    border-color: #555555;
+}
+
+.jankx-wc-buy-now-button.button--outline {
+    background-color: transparent;
+    color: #ff5722;
+    border-color: #ff5722;
+}
+
+.jankx-wc-buy-now-button.button--outline:hover {
+    background-color: #ff5722;
+    color: #ffffff;
+}
+
+.jankx-wc-buy-now-button.button--small {
+    padding: 8px 16px;
+    font-size: 12px;
+}
+
+.jankx-wc-buy-now-button.button--medium {
+    padding: 12px 24px;
+    font-size: 14px;
+}
+
+.jankx-wc-buy-now-button.button--large {
+    padding: 16px 32px;
+    font-size: 16px;
+}
+
+.jankx-wc-buy-now-button.is-loading {
+    opacity: 0.7;
+    cursor: wait;
+    pointer-events: none;
+}
+
+.jankx-wc-buy-now-button.is-loading::after {
+    content: '';
+    display: inline-block;
+    width: 16px;
+    height: 16px;
+    margin-left: 8px;
+    border: 2px solid currentColor;
+    border-right-color: transparent;
+    border-radius: 50%;
+    animation: jankx-wc-spin 0.8s linear infinite;
+}
+
+@keyframes jankx-wc-spin {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+}

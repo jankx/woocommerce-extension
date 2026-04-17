@@ -1,0 +1,69 @@
+/**
+ * WooCommerce Blocks Editor Styles
+ */
+
+/* Buy Now Button Block Editor */
+.wp-block-jankx-woocommerce-buy-now-button {
+    padding: 1rem;
+    background: #f0f0f0;
+    border: 2px dashed #ccc;
+    text-align: center;
+}
+
+.wp-block-jankx-woocommerce-buy-now-button::before {
+    content: '🛒 Buy Now Button';
+    display: block;
+    font-weight: 600;
+    color: #666;
+}
+
+.wp-block-jankx-woocommerce-buy-now-button[data-full-width="true"] {
+    width: 100%;
+}
+
+/* Sale Badge Block Editor */
+.wp-block-jankx-woocommerce-sale-badge {
+    display: inline-block;
+    padding: 4px 8px;
+    background: #ff5722;
+    color: #fff;
+    border-radius: 4px;
+    font-size: 14px;
+    font-weight: 600;
+    text-align: center;
+}
+
+.wp-block-jankx-woocommerce-sale-badge::before {
+    content: '🏷️ Sale Badge: ';
+}
+
+/* Position variations */
+.wp-block-jankx-woocommerce-sale-badge[data-position="top-left"] {
+    position: relative;
+}
+
+.wp-block-jankx-woocommerce-sale-badge[data-position="top-right"] {
+    position: relative;
+}
+
+.wp-block-jankx-woocommerce-sale-badge[data-position="bottom-left"] {
+    position: relative;
+}
+
+.wp-block-jankx-woocommerce-sale-badge[data-position="bottom-right"] {
+    position: relative;
+}
+
+/* Disabled state when feature is disabled */
+.wp-block-jankx-woocommerce-buy-now-button.is-disabled,
+.wp-block-jankx-woocommerce-sale-badge.is-disabled {
+    opacity: 0.5;
+    pointer-events: none;
+}
+
+.wp-block-jankx-woocommerce-buy-now-button.is-disabled::after,
+.wp-block-jankx-woocommerce-sale-badge.is-disabled::after {
+    content: ' (Feature disabled in settings)';
+    color: #d63638;
+    font-size: 12px;
+}

@@ -1,0 +1,89 @@
+/**
+ * Sale Badge Block - Editor Styles
+ */
+
+.jankx-wc-sale-badge-edit {
+    display: inline-block;
+    font-weight: 600;
+    text-align: center;
+    cursor: default;
+    user-select: none;
+    position: relative;
+
+    // Position indicator arrows
+    &::before {
+        content: '';
+        position: absolute;
+        width: 0;
+        height: 0;
+        border-style: solid;
+    }
+
+    // Top Left
+    &.jankx-wc-sale-badge--top-left::before {
+        top: -8px;
+        left: -8px;
+        border-width: 0 8px 8px 0;
+        border-color: transparent currentColor transparent transparent;
+    }
+
+    // Top Right
+    &.jankx-wc-sale-badge--top-right::before {
+        top: -8px;
+        right: -8px;
+        border-width: 8px 8px 0 0;
+        border-color: currentColor transparent transparent transparent;
+    }
+
+    // Bottom Left
+    &.jankx-wc-sale-badge--bottom-left::before {
+        bottom: -8px;
+        left: -8px;
+        border-width: 8px 0 0 8px;
+        border-color: transparent transparent transparent currentColor;
+    }
+
+    // Bottom Right
+    &.jankx-wc-sale-badge--bottom-right::before {
+        bottom: -8px;
+        right: -8px;
+        border-width: 0 0 8px 8px;
+        border-color: transparent transparent currentColor transparent;
+    }
+
+    // Hidden style placeholder
+    &.jankx-wc-sale-badge--hide {
+        background-color: #f0f0f0 !important;
+        color: #999 !important;
+        border: 2px dashed #ccc;
+        padding: 8px 16px !important;
+    }
+
+    &__placeholder {
+        font-size: 12px;
+        font-style: italic;
+    }
+}
+
+// Position preview container
+.wp-block-jankx-woocommerce-sale-badge {
+    position: relative;
+    min-height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #f9f9f9;
+    border: 1px dashed #ddd;
+    padding: 20px;
+
+    &::before {
+        content: '🏷️ ' attr(data-preview-text);
+        position: absolute;
+        top: 5px;
+        left: 5px;
+        font-size: 11px;
+        color: #999;
+        text-transform: uppercase;
+        letter-spacing: 0.5px;
+    }
+}

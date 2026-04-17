@@ -1,0 +1,82 @@
+/**
+ * Buy Now Button Block - Editor Styles
+ */
+
+.jankx-wc-buy-now-button-edit {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 12px 24px;
+    font-size: 14px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    border: 2px solid transparent;
+    cursor: default;
+    transition: all 0.2s ease;
+
+    // Style variations
+    &.button--primary {
+        background-color: #ff5722;
+        color: #ffffff;
+        border-color: #ff5722;
+    }
+
+    &.button--secondary {
+        background-color: #333333;
+        color: #ffffff;
+        border-color: #333333;
+    }
+
+    &.button--outline {
+        background-color: transparent;
+        color: #ff5722;
+        border-color: #ff5722;
+    }
+
+    // Size variations
+    &.button--small {
+        padding: 8px 16px;
+        font-size: 12px;
+    }
+
+    &.button--medium {
+        padding: 12px 24px;
+        font-size: 14px;
+    }
+
+    &.button--large {
+        padding: 16px 32px;
+        font-size: 16px;
+    }
+
+    // Full width
+    &[style*="width: 100%"] {
+        width: 100%;
+        display: flex;
+    }
+
+    // Icon indicator
+    &::before {
+        content: '🛒';
+        margin-right: 8px;
+        font-size: 1.2em;
+    }
+
+    // Placeholder state
+    &:empty::after {
+        content: attr(data-placeholder);
+        opacity: 0.6;
+    }
+}
+
+// Block wrapper in editor
+.wp-block-jankx-woocommerce-buy-now-button {
+    &[data-align="center"] .jankx-wc-buy-now-button-edit {
+        margin: 0 auto;
+    }
+
+    &[data-align="right"] .jankx-wc-buy-now-button-edit {
+        margin-left: auto;
+    }
+}

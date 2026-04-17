@@ -1,0 +1,113 @@
+/**
+ * Sale Badge Block - Frontend Styles
+ */
+
+.jankx-wc-sale-badge {
+    display: inline-block;
+    font-weight: 600;
+    text-align: center;
+    line-height: 1.2;
+    z-index: 10;
+
+    // Position variations
+    &--top-left {
+        position: absolute;
+        top: 10px;
+        left: 10px;
+    }
+
+    &--top-right {
+        position: absolute;
+        top: 10px;
+        right: 10px;
+    }
+
+    &--bottom-left {
+        position: absolute;
+        bottom: 10px;
+        left: 10px;
+    }
+
+    &--bottom-right {
+        position: absolute;
+        bottom: 10px;
+        right: 10px;
+    }
+
+    // Style variations
+    &--percentage {
+        font-variant-numeric: tabular-nums;
+    }
+
+    &--amount {
+        font-variant-numeric: tabular-nums;
+    }
+
+    &--text {
+        text-transform: uppercase;
+        letter-spacing: 0.5px;
+    }
+
+    // Animation on hover
+    transition: transform 0.2s ease;
+
+    &:hover {
+        transform: scale(1.05);
+    }
+}
+
+// Different shapes
+.jankx-wc-sale-badge {
+    // Rounded (default)
+    border-radius: 4px;
+
+    // Pill shape if border-radius is high
+    &[style*="border-radius: 50px"],
+    &[style*="border-radius: 999px"] {
+        padding-left: 12px;
+        padding-right: 12px;
+    }
+}
+
+// Product card integration
+.wc-block-grid__product,
+.wc-block-product {
+    position: relative;
+
+    .jankx-wc-sale-badge {
+        pointer-events: none; // Let clicks pass through to product
+    }
+}
+
+// Responsive adjustments
+@media (max-width: 768px) {
+    .jankx-wc-sale-badge {
+        font-size: 12px;
+
+        &--top-left,
+        &--top-right,
+        &--bottom-left,
+        &--bottom-right {
+            top: 5px;
+            right: 5px;
+            bottom: 5px;
+            left: 5px;
+        }
+    }
+}
+
+// Animation for new badges
+@keyframes jankx-wc-badge-appear {
+    from {
+        opacity: 0;
+        transform: scale(0.8);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+.jankx-wc-sale-badge {
+    animation: jankx-wc-badge-appear 0.3s ease-out;
+}

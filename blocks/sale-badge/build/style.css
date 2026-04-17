@@ -1,0 +1,94 @@
+/**
+ * Sale Badge Block - Frontend Styles
+ */
+
+.jankx-wc-sale-badge {
+    display: inline-block;
+    font-weight: 600;
+    text-align: center;
+    line-height: 1.2;
+    z-index: 10;
+}
+
+.jankx-wc-sale-badge--top-left {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+}
+
+.jankx-wc-sale-badge--top-right {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+}
+
+.jankx-wc-sale-badge--bottom-left {
+    position: absolute;
+    bottom: 10px;
+    left: 10px;
+}
+
+.jankx-wc-sale-badge--bottom-right {
+    position: absolute;
+    bottom: 10px;
+    right: 10px;
+}
+
+.jankx-wc-sale-badge--percentage,
+.jankx-wc-sale-badge--amount {
+    font-variant-numeric: tabular-nums;
+}
+
+.jankx-wc-sale-badge--text {
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.jankx-wc-sale-badge {
+    transition: transform 0.2s ease;
+}
+
+.jankx-wc-sale-badge:hover {
+    transform: scale(1.05);
+}
+
+.wc-block-grid__product,
+.wc-block-product {
+    position: relative;
+}
+
+.wc-block-grid__product .jankx-wc-sale-badge,
+.wc-block-product .jankx-wc-sale-badge {
+    pointer-events: none;
+}
+
+@keyframes jankx-wc-badge-appear {
+    from {
+        opacity: 0;
+        transform: scale(0.8);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+.jankx-wc-sale-badge {
+    animation: jankx-wc-badge-appear 0.3s ease-out;
+}
+
+@media (max-width: 768px) {
+    .jankx-wc-sale-badge {
+        font-size: 12px;
+    }
+    
+    .jankx-wc-sale-badge--top-left,
+    .jankx-wc-sale-badge--top-right,
+    .jankx-wc-sale-badge--bottom-left,
+    .jankx-wc-sale-badge--bottom-right {
+        top: 5px;
+        right: 5px;
+        bottom: 5px;
+        left: 5px;
+    }
+}

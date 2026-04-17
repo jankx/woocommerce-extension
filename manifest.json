@@ -1,0 +1,19 @@
+{
+    "name": "WooCommerce",
+    "version": "1.0.0",
+    "description": "Enhanced WooCommerce integration for Jankx theme with Buy Now button and sale badge percentage display.",
+    "author": "Jankx Team",
+    "extension_id": "woocommerce",
+    "caller": {
+        "file": "WooCommerceExtension.php",
+        "class": "Jankx\\Extensions\\WooCommerce\\WooCommerceExtension",
+        "method": "init"
+    },
+    "auto_activate": true,
+    "enabled": true,
+    "settings_url": "",
+    "is_application": true,
+    "requires": {
+        "woocommerce": ">=7.0"
+    }
+}

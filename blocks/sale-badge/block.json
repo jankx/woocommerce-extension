@@ -1,0 +1,77 @@
+{
+  "$schema": "https://schemas.wp.org/trunk/block.json",
+  "apiVersion": 3,
+  "name": "jankx-woocommerce/sale-badge",
+  "title": "Sale Badge",
+  "category": "woocommerce",
+  "parent": ["woocommerce/product-image", "core/group", "core/column"],
+  "icon": "tag",
+  "description": "Display a sale badge with discount percentage for products on sale.",
+  "keywords": ["sale", "badge", "discount", "percentage", "woocommerce"],
+  "textdomain": "jankx",
+  "attributes": {
+    "badgeStyle": {
+      "type": "string",
+      "default": "percentage",
+      "enum": ["percentage", "amount", "text", "hide"]
+    },
+    "customText": {
+      "type": "string",
+      "default": ""
+    },
+    "position": {
+      "type": "string",
+      "default": "top-left",
+      "enum": ["top-left", "top-right", "bottom-left", "bottom-right"]
+    },
+    "backgroundColor": {
+      "type": "string",
+      "default": "#ff5722"
+    },
+    "textColor": {
+      "type": "string",
+      "default": "#ffffff"
+    },
+    "fontSize": {
+      "type": "number",
+      "default": 14
+    },
+    "borderRadius": {
+      "type": "number",
+      "default": 4
+    },
+    "padding": {
+      "type": "object",
+      "default": {
+        "top": "4px",
+        "right": "8px",
+        "bottom": "4px",
+        "left": "8px"
+      }
+    },
+    "minimumDiscount": {
+      "type": "number",
+      "default": 1
+    }
+  },
+  "supports": {
+    "html": false,
+    "align": false,
+    "spacing": {
+      "margin": true,
+      "padding": false
+    },
+    "color": {
+      "background": true,
+      "text": true
+    },
+    "typography": {
+      "fontSize": true,
+      "fontWeight": true
+    }
+  },
+  "render": "php",
+  "editorScript": "jankx-wc-sale-badge-editor",
+  "style": "jankx-wc-sale-badge",
+  "editorStyle": "jankx-wc-sale-badge-editor"
+}

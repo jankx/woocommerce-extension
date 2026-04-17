@@ -1,0 +1,67 @@
+{
+  "$schema": "https://schemas.wp.org/trunk/block.json",
+  "apiVersion": 3,
+  "name": "jankx-woocommerce/buy-now-button",
+  "title": "Buy Now Button",
+  "category": "woocommerce",
+  "parent": ["core/group", "core/column"],
+  "icon": "button",
+  "description": "A Buy Now button that redirects directly to checkout. Only shows for purchasable products.",
+  "keywords": ["buy", "now", "checkout", "woocommerce", "product"],
+  "textdomain": "jankx",
+  "attributes": {
+    "buttonText": {
+      "type": "string",
+      "default": "MUA NGAY"
+    },
+    "buttonStyle": {
+      "type": "string",
+      "default": "primary",
+      "enum": ["primary", "secondary", "outline"]
+    },
+    "buttonSize": {
+      "type": "string",
+      "default": "medium",
+      "enum": ["small", "medium", "large"]
+    },
+    "fullWidth": {
+      "type": "boolean",
+      "default": false
+    },
+    "clearCart": {
+      "type": "boolean",
+      "default": true
+    },
+    "backgroundColor": {
+      "type": "string"
+    },
+    "textColor": {
+      "type": "string"
+    },
+    "borderRadius": {
+      "type": "number",
+      "default": 4
+    }
+  },
+  "supports": {
+    "html": false,
+    "align": true,
+    "spacing": {
+      "margin": true,
+      "padding": true
+    },
+    "color": {
+      "background": true,
+      "text": true
+    },
+    "typography": {
+      "fontSize": true,
+      "fontWeight": true,
+      "textTransform": true
+    }
+  },
+  "render": "php",
+  "editorScript": "jankx-wc-buy-now-button-editor",
+  "style": "jankx-wc-buy-now-button",
+  "editorStyle": "jankx-wc-buy-now-button-editor"
+}
