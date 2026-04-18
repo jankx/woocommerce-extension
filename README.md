@@ -60,11 +60,13 @@ The WooCommerce options page is automatically injected into:
 extensions/woocommerce/
 ├── WooCommerceExtension.php    # Main extension class
 ├── manifest.json               # Extension manifest
+├── package.json                # NPM dependencies for block building
+├── webpack.config.js           # Webpack configuration for blocks
 ├── src/
 │   ├── Admin/
 │   │   └── Options.php         # Theme options integration
 │   ├── Services/
-│   │   ├── BuyNowService.php  # Buy now functionality
+│   │   ├── BuyNowService.php   # Buy now functionality
 │   │   └── SaleBadgeService.php # Sale badge logic
 │   ├── Adapters/
 │   │   ├── ProductAdapterFactory.php
@@ -79,30 +81,58 @@ extensions/woocommerce/
 │       │   └── Block.php       # Buy now block render
 │       └── SaleBadge/
 │           └── Block.php       # Sale badge block render
-├── blocks/
+├── blocks/                     # Gutenberg block source files
 │   ├── buy-now-button/
-│   │   └── block.json          # Block metadata
+│   │   ├── block.json          # Block metadata
+│   │   ├── index.js            # Block registration & edit component
+│   │   ├── editor.scss         # Editor-only styles
+│   │   ├── style.scss          # Frontend & editor styles
+│   │   └── build/              # Compiled block assets
+│   │       ├── index.js
+│   │       ├── index.asset.php
+│   │       ├── editor.css
+│   │       └── style.css
 │   └── sale-badge/
-│       └── block.json          # Block metadata
+│       ├── block.json          # Block metadata
+│       ├── index.js            # Block registration & edit component
+│       ├── editor.scss         # Editor-only styles
+│       ├── style.scss          # Frontend & editor styles
+│       └── build/              # Compiled block assets
+│           ├── index.js
+│           ├── index.asset.php
+│           ├── editor.css
+│           └── style.css
 ├── assets/
 │   └── css/
 │       └── blocks-editor.css   # Editor styles
-└── tests/                      # Unit & integration tests
-    ├── Unit/
-    │   ├── Services/
-    │   ├── Adapters/
-    │   └── Admin/
-    └── Integration/
+├── tests/                      # Unit & integration tests
+│   ├── bootstrap.php
+│   ├── phpunit.xml             # PHPUnit configuration
+│   ├── Unit/
+│   │   ├── Services/
+│   │   │   ├── BuyNowServiceTest.php
+│   │   │   └── SaleBadgeServiceTest.php
+│   │   ├── Adapters/
+│   │   │   ├── ProductAdapterFactoryTest.php
+│   │   │   ├── ProductIdAdapterTest.php
+│   │   │   ├── WCProductAdapterTest.php
+│   │   │   └── WPPostAdapterTest.php
+│   │   └── Admin/
+│   │       └── OptionsTest.php
+│   └── Integration/
+│       └── WooCommerceExtensionTest.php
+└── langs/                      # Translation files
 ```
 
 ## Development
 
 ### Running Tests
 
+Tests use PHPUnit with configuration at `tests/phpunit.xml`:
+
 ```bash
 cd extensions/woocommerce
-composer install
-./vendor/bin/phpunit
+phpunit --configuration tests/phpunit.xml
 ```
 
 ### Adding New Features
